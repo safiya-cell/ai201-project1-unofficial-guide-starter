@@ -73,8 +73,8 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
 | # | Question                                                           | Expected answer                        |
 |---|--------------------------------------------------------------------|----------------------------------------|
-| 1 | What do students say about the professors' teaching at the college?| some of the professors teach well while others are challenging|
-| 2 | What is the overall rating of Eva-Maria Sofianos class?            | 4.5                                    |
+| 1 | What do students say about the professors' teaching at the college?|some of the professors teach well while others are challenging|
+| 2 | What are the students saying about the teachers' personalities?      |described as easy-going and helpful     |
 | 3 | What makes students want to take certain professors again?         |they make it easy to understand concepts|
 | 4 | What prevents students from taking certain professors again?       |they make it difficult to understand concepts|
 | 5 | What do students say about the assignments given?                  |they get alot of homework and projects and their teachers guide them|
