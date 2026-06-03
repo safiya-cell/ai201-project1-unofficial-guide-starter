@@ -9,7 +9,7 @@
 
 ## Domain
 
-<!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+The domain is Student reviews of CS professors at Lehman College. This is difficult for official channels because they do not show the teaching style, class difficulty, and other students' experiences with their professors.
 
 ---
 
