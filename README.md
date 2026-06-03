@@ -45,7 +45,7 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
 **Chunk size: 512 characters**
 
-**Overlap: No overlap because there are smaller amounts of information**
+**Overlap: There will be overlap as it will cut across sentences**
 
 **Why these choices fit your documents: it is based on a review that has smaller amounts of characters. This is when fixed size chunking is the best approach to splitting characters**
 
@@ -61,9 +61,9 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
      Consider: context length limits, multilingual support, accuracy on domain-specific text,
      latency, and local vs. API-hosted. -->
 
-**Model used:**
+**Model used: all-MiniLM-L6-v2 via sentence-transformers**
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection: There would be context length limits and it would not run locally if i weigh in choosing a different model**
 
 ---
 
