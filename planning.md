@@ -56,11 +56,11 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+**Embedding model: sentence-transformers all-MiniLM-L6-v2**
 
 **Top-k:**
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection: there would be context length limits**
 
 ---
 
@@ -71,13 +71,13 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
      is right or wrong. "What are good dining halls?" is too vague.
      "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
 
-| # | Question | Expected answer |
-|---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| # | Question                                                           | Expected answer                        |
+|---|--------------------------------------------------------------------|----------------------------------------|
+| 1 | What do students say about the professors' teaching at the college?| some of the professors teach well while others are challenging|
+| 2 | What is the overall rating of Eva-Maria Sofianos class?            | 4.5                                    |
+| 3 | What makes students want to take certain professors again?         |they make it easy to understand concepts|
+| 4 | What prevents students from taking certain professors again?       |they make it difficult to understand concepts|
+| 5 | What do students say about the assignments given?                  |they get alot of homework and projects and their teachers guide them|
 
 ---
 
@@ -87,33 +87,22 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Inconsistent documents
 
-2.
+2. Chunks that split key information across boundaries
 
 ---
 
 ## Architecture
 
-<!-- Draw a diagram of your pipeline showing the five stages:
-     Document Ingestion → Chunking → Embedding + Vector Store → Retrieval → Generation
-     Label each stage with the tool or library you're using.
-     You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
-     You'll use this diagram as context when prompting AI tools to implement each stage. -->
+<img width="5317" height="515" alt="image" src="https://github.com/user-attachments/assets/afdd389f-4423-41a0-ba9f-a8878c19395d" />
+
 
 ---
 
 ## AI Tool Plan
 
-<!-- For each part of the pipeline below, describe:
-     - Which AI tool you plan to use (Claude, Copilot, ChatGPT, etc.)
-     - What you'll give it as input (which sections of this planning.md, which requirements)
-     - What you expect it to produce
-     - How you'll verify the output matches your spec
-
-     "I'll use AI to help me code" is not a plan.
-     "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
-     with my specified chunk size and overlap" is a plan. -->
+     I'll give Claude my Fixed Chunking Strategy section and ask it to implement chunk_text().
 
 **Milestone 3 — Ingestion and chunking:**
 
