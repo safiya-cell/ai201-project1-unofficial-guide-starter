@@ -9,10 +9,7 @@
 
 ## Domain
 
-<!-- What topic or category of knowledge does your system cover?
-     Why is this knowledge valuable, and why is it hard to find through official channels?
-     Example: "Student reviews of CS professors at [university] — useful because official
-     course descriptions don't reflect teaching style, exam difficulty, or workload." -->
+The domain is Student reviews of CS professors at Lehman College. This is difficult for official channels because they do not show the teaching style, class difficulty, and other students' experiences with their professors. 
 
 ---
 
@@ -22,18 +19,18 @@
      Be specific: include URLs, subreddit names, forum thread titles, or file names.
      Aim for variety — sources that together cover different subtopics or perspectives. -->
 
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source           | Type | URL or file path                                 |
+|---|------------------|------|--------------------------------------------------|
+| 1 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/3014815|
+| 2 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/1847213|
+| 3 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/457502 |
+| 4 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/2418146|
+| 5 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/3013308|
+| 6 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/2412165|
+| 7 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/624955 |
+| 8 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/487824 |
+| 9 | Rate My Professor|Review|https://www.ratemyprofessors.com/professor/1973094|
+| 10| Rate My Professor|Review|https://www.ratemyprofessors.com/professor/2668831|
 
 ---
 
@@ -46,13 +43,13 @@
      - Any preprocessing you did before chunking (e.g., stripping HTML, removing headers)
      - What your final chunk count was across all documents -->
 
-**Chunk size:**
+**Chunk size: 512 characters**
 
-**Overlap:**
+**Overlap: No overlap because there are smaller amounts of information**
 
-**Why these choices fit your documents:**
+**Why these choices fit your documents: it is based on a review that has smaller amounts of characters. This is when fixed size chunking is the best approach to splitting characters**
 
-**Final chunk count:**
+**Final chunk count: 512**
 
 ---
 
