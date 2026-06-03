@@ -19,17 +19,17 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
      Aim for at least 10 sources that together cover different subtopics or perspectives within your domain. -->
 
 | # | Source | Description | URL or location |
-|---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+|---|--------|-------------|---------------------------------------------------|
+| 1 | RMP    |Review       | https://www.ratemyprofessors.com/professor/3014815| 
+| 2 | RMP    |Review       |https://www.ratemyprofessors.com/professor/1847213 |
+| 3 | RMP    |Review       |https://www.ratemyprofessors.com/professor/457502  |
+| 4 | RMP    |Review       |https://www.ratemyprofessors.com/professor/2418146 |
+| 5 | RMP    |Review       |https://www.ratemyprofessors.com/professor/3013308 |
+| 6 | RMP    |Review       |https://www.ratemyprofessors.com/professor/2412165 |
+| 7 | RMP    |Review       |https://www.ratemyprofessors.com/professor/624955  |
+| 8 | RMP    |Review       |https://www.ratemyprofessors.com/professor/487824  |
+| 9 | RMP    |Review       |https://www.ratemyprofessors.com/professor/1973094 |
+| 10| RMP    |Review       |https://www.ratemyprofessors.com/professor/2668831 |
 
 ---
 
@@ -40,11 +40,11 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size: 152 characters**
 
-**Overlap:**
+**Overlap: There will be overlap as it will cut across sentences**
 
-**Reasoning:**
+**Reasoning: Fixed-size chunking causes the overlap which is more suitable for reviews from Rate My Professor**
 
 ---
 
