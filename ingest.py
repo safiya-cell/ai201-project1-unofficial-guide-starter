@@ -217,3 +217,71 @@ if __name__ == "__main__":
         print(f"Chunk index : {record['chunk_index']}")
         print(f"Text        : {record['text'][:120]}...")
         print()
+
+# ---------------------------------------------------------------------------
+# 6. CHUNK QUALITY INSPECTION
+# ---------------------------------------------------------------------------
+
+import random
+
+def inspect_chunks(all_chunks: list[dict], n: int = 5):
+    """
+    Print n representative chunks and evaluate each one.
+    Samples from different sources to get variety.
+    """
+    print("\n" + "=" * 60)
+    print("CHUNK QUALITY INSPECTION")
+    print("=" * 60)
+
+    # Pick chunks spread across different professors
+    sample = random.sample(all_chunks, min(n, len(all_chunks)))
+
+    for i, record in enumerate(sample, 1):
+        text = record["text"]
+        print(f"\n--- Chunk {i} ---")
+        print(f"Source      : {record['source']}")
+        print(f"Chunk index : {record['chunk_index']}")
+        print(f"Length      : {len(text)} chars")
+        print(f"Text        :\n{text}")
+
+        # --- Automated checks ---
+        issues = []
+
+        # Too short to be meaningful
+        if len(text) < 100:
+            issues.append("⚠️  TOO SHORT — fragment with no standalone meaning")
+
+        # HTML tags survived cleaning
+        if re.search(r"<[^>]+>", text):
+            issues.append("❌  HTML ARTIFACT — cleaning missed tags")
+
+        # HTML entities survived cleaning
+        if re.search(r"&[a-z]+;|&#\d+;", text):
+            issues.append("❌  HTML ENTITY — e.g. &#39; or &amp; not decoded")
+
+        # Starts mid-sentence (overlap artifact — starts lowercase, no capital)
+        if text and text[0].islower():
+            issues.append("⚠️  STARTS MID-SENTENCE — may lack context")
+
+        # Ends mid-sentence (no terminal punctuation)
+        if text and text[-1] not in ".!?\"'":
+            issues.append("⚠️  ENDS MID-SENTENCE — cuts off before a complete thought")
+
+        # Too long — multiple topics likely merged
+        if len(text) > 550:
+            issues.append("⚠️  TOO LONG — may dilute retrieval relevance")
+
+        if issues:
+            print("\nIssues found:")
+            for issue in issues:
+                print(f"  {issue}")
+        else:
+            print("\n✅  Looks good — complete, retrievable thought")
+
+        print()
+
+
+# Call it after run_pipeline
+if __name__ == "__main__":
+    chunks = run_pipeline(RAW_DOCUMENTS)
+    inspect_chunks(chunks, n=5)
