@@ -58,7 +58,7 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
 **Embedding model: sentence-transformers all-MiniLM-L6-v2**
 
-**Top-k:**
+**Top-k: 5**
 
 **Production tradeoff reflection: there would be context length limits**
 
@@ -104,7 +104,7 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
      I'll give Claude my Fixed Chunking Strategy section and ask it to implement chunk_text().
 
-**Milestone 3 — Ingestion and chunking:**
+**Milestone 3 — Ingestion and chunking: **
 
 **Milestone 4 — Embedding and retrieval:**
 
