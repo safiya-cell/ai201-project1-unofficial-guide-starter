@@ -60,7 +60,7 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
 **Top-k: 5**
 
-**Production tradeoff reflection: there would be context length limits**
+**Production tradeoff reflection: all-MiniLM-L6-v2 trades accuracy for speed. Semantic matching is strong when it refers to  assignments.**
 
 ---
 
