@@ -90,11 +90,11 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 |What do students say about the professors' teaching at the college? | some of the professors teach well while others are challenging | One of the more organized professors in the department. Highly interactive lectures. Students who attend every class do significantly better on exams. | relevant | accurate
+| 2 |What are students saying about the teachers' personalities? | described as easy-going and helpful | One of the more organized professors in the department. Highly interactive lectures. Students who attend every class do significantly better on exams. | off-target | inaccurate|
+| 3 |What makes students want to take certain professors again? | they make it easy to understand concepts|One of the more organized professors in the department. Highly interactive lectures. Students who attend every class do significantly better on exams | relevant |inaccurate |
+| 4 |What prevents students from taking certain professors again? |they make it difficult to understand concepts |One of the more organized professors in the department. Highly interactive lectures. Students who attend every class do significantly better on exams |off-target |inaccurate |
+| 5 |What do students say about the assignments given? |they get alot of homework and projects and their teachers guide them | Assignments are confusing with minimal instructions. Many students rely on YouTube to learn the actual material. Feedback on work is nearly nonexistent. | relevant| accurate |
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate
@@ -114,13 +114,16 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
      "The embedding model treated the professor's nickname as out-of-vocabulary and returned
      results from an unrelated review" is an explanation. -->
 
-**Question that failed:**
 
-**What the system returned:**
+**Question that failed: 
+What are students saying about the teachers' personalities?
+What prevents students from taking certain professors again?**
 
-**Root cause (tied to a specific pipeline stage):**
+**What the system returned: One of the more organized professors in the department. Highly interactive lectures. Students who attend every class do significantly better on exams.**
 
-**What you would change to fix it:**
+**Root cause (tied to a specific pipeline stage): retrieval similarity stage where it only showed the same results for the two questions**
+
+**What you would change to fix it: To get more results from the reviews of the professors. The amount of reviews were limited**
 
 ---
 
@@ -128,10 +131,9 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
 <!-- Reflect on how planning.md shaped your implementation.
      Answer both questions with at least 2–3 sentences each. -->
+**One way the spec helped you during implementation: The number of characters used for fixed chunking helped me break up the sentences into different parts. It also helped with overlap for relevant information to be shown when being split.**
 
-**One way the spec helped you during implementation:**
-
-**One way your implementation diverged from the spec, and why:**
+**One way your implementation diverged from the spec, and why: It split the relevant information which cut off mid sentence. This is because of the amount of characters used.**
 
 ---
 
@@ -148,12 +150,12 @@ The domain is Student reviews of CS professors at Lehman College. This is diffic
 
 **Instance 1**
 
-- *What I gave the AI:*
-- *What it produced:*
+- *What I gave the AI: I asked the AI to implement a script that loads the documents, cleans them, produces 512 characters and overlap, and adds the planning.md file.*
+- *What it produced: it produced an ingest.py with the chunksize, the overlap, and the other specs in the planning.md file.*
 - *What I changed or overrode:*
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
+- *What I gave the AI: generate your embedding and retrieval code. Use the diagram to establish the full architecture, then  implement the embedding step (loading chunks from your ingestion pipeline, embedding with all-MiniLM-L6-v2, storing in ChromaDB with source metadata) and a retrieval function.*
+- *What it produced: it produced an embedding and retrieval file, as well as the architecture flow chart and the instructions to install the sentence transformers before running the  file on VS Code.*
 - *What I changed or overrode:*
